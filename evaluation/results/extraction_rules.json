@@ -1,0 +1,862 @@
+{
+  "engine": "rules",
+  "evaluated_at": "2026-10-29T14:38:40+00:00",
+  "documents": 10,
+  "fields_evaluated": 120,
+  "field_accuracy": 0.8,
+  "accuracy_by_field": {
+    "intervention_id": 1.0,
+    "date": 0.7,
+    "building": 1.0,
+    "equipment_id": 1.0,
+    "equipment_name": 0.7,
+    "equipment_category": 0.7,
+    "technician": 0.7,
+    "problem_description": 0.7,
+    "actions_performed": 0.7,
+    "status": 0.8,
+    "follow_up_required": 0.8,
+    "recommendations": 0.8
+  },
+  "accuracy_by_layout": {
+    "structured": 1.0,
+    "narrative": 0.3333,
+    "scanned": 1.0
+  },
+  "outcomes": {
+    "correct": 90,
+    "missed": 24,
+    "correct_null": 6
+  },
+  "missing_field_detection": {
+    "fields_absent_from_documents": 6,
+    "correctly_left_null": 6,
+    "hallucinated_values": 0,
+    "null_recall": 1.0
+  },
+  "estimated_correction_rate": 0.2,
+  "mean_token_f1": {
+    "equipment_name": 0.7,
+    "technician": 0.667,
+    "problem_description": 0.7,
+    "actions_performed": 0.7,
+    "recommendations": 0.714
+  },
+  "processing_time_ms": {
+    "mean": 222.9,
+    "median": 11.6,
+    "max": 2137.9
+  },
+  "documents_detail": [
+    {
+      "file": "RI-2026-1041_CTA_vibrations.pdf",
+      "layout": "structured",
+      "method": "text",
+      "pdf_ms": 6.1,
+      "extraction_ms": 2.1,
+      "fields": {
+        "intervention_id": {
+          "expected": "RI-2026-1041",
+          "predicted": "RI-2026-1041",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "date": {
+          "expected": "2026-10-28",
+          "predicted": "2026-10-28",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "building": {
+          "expected": "BAT-A",
+          "predicted": "Bâtiment A - Immeuble de bureaux Horizon",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "equipment_id": {
+          "expected": "CTA-A01",
+          "predicted": "CTA-A01",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "equipment_name": {
+          "expected": "Centrale de traitement d'air (CTA) - toiture",
+          "predicted": "Centrale de traitement d'air (CTA) - toiture",
+          "outcome": "correct",
+          "token_f1": 1.0
+        },
+        "equipment_category": {
+          "expected": "CVC",
+          "predicted": "CVC",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "technician": {
+          "expected": "Julien Moreau",
+          "predicted": "Julien Moreau",
+          "outcome": "correct",
+          "token_f1": 1.0
+        },
+        "problem_description": {
+          "expected": "Vibration anormale de la centrale de traitement d'air signalée par les occupants du 4e étage. Niveau vibratoire élevé mesuré sur le palier côté poulie du moto-ventilateur.",
+          "predicted": "Vibration anormale de la centrale de traitement d'air signalée par les occupants du 4e étage. Niveau vibratoire élevé mesuré sur le palier côté poulie du moto-ventilateur.",
+          "outcome": "correct",
+          "token_f1": 1.0
+        },
+        "actions_performed": {
+          "expected": "Contrôle de l'alignement des poulies et de la tension de courroie. Resserrage des plots antivibratiles. Mesure vibratoire avant et après intervention : amélioration partielle seulement.",
+          "predicted": "Contrôle de l'alignement des poulies et de la tension de courroie. Resserrage des plots antivibratiles. Mesure vibratoire avant et après intervention : amélioration partielle seulement.",
+          "outcome": "correct",
+          "token_f1": 1.0
+        },
+        "status": {
+          "expected": "en_cours",
+          "predicted": "en_cours",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "follow_up_required": {
+          "expected": true,
+          "predicted": true,
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "recommendations": {
+          "expected": "Remplacer les roulements du moto-ventilateur et faire réaliser une analyse vibratoire complète. Défaut récurrent sur cet équipement.",
+          "predicted": "Remplacer les roulements du moto-ventilateur et faire réaliser une analyse vibratoire complète. Défaut récurrent sur cet équipement.",
+          "outcome": "correct",
+          "token_f1": 1.0
+        }
+      }
+    },
+    {
+      "file": "RI-2026-1042_fuite_circuit_chauffage.pdf",
+      "layout": "structured",
+      "method": "text",
+      "pdf_ms": 3.0,
+      "extraction_ms": 1.5,
+      "fields": {
+        "intervention_id": {
+          "expected": "RI-2026-1042",
+          "predicted": "RI-2026-1042",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "date": {
+          "expected": "2026-10-23",
+          "predicted": "2026-10-23",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "building": {
+          "expected": "BAT-D",
+          "predicted": "Bâtiment D - Groupe scolaire des Érables",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "equipment_id": {
+          "expected": "HYD-D01",
+          "predicted": "HYD-D01",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "equipment_name": {
+          "expected": "Réseau hydraulique de chauffage",
+          "predicted": "Réseau hydraulique de chauffage",
+          "outcome": "correct",
+          "token_f1": 1.0
+        },
+        "equipment_category": {
+          "expected": "Plomberie",
+          "predicted": "Plomberie",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "technician": {
+          "expected": "Thomas Girard",
+          "predicted": "Thomas Girard",
+          "outcome": "correct",
+          "token_f1": 1.0
+        },
+        "problem_description": {
+          "expected": "Fuite sur un circuit hydraulique de chauffage : goutte à goutte au niveau de la vanne d'isolement du départ nord.",
+          "predicted": "Fuite sur un circuit hydraulique de chauffage : goutte à goutte au niveau de la vanne d'isolement du départ nord.",
+          "outcome": "correct",
+          "token_f1": 1.0
+        },
+        "actions_performed": {
+          "expected": "Isolement du tronçon, remplacement du presse-étoupe de la vanne, remise en eau et purge. Contrôle d'étanchéité sur 30 minutes : aucune fuite constatée.",
+          "predicted": "Isolement du tronçon, remplacement du presse-étoupe de la vanne, remise en eau et purge. Contrôle d'étanchéité sur 30 minutes : aucune fuite constatée.",
+          "outcome": "correct",
+          "token_f1": 1.0
+        },
+        "status": {
+          "expected": "terminee",
+          "predicted": "terminee",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "follow_up_required": {
+          "expected": false,
+          "predicted": false,
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "recommendations": {
+          "expected": "Vérifier l'état des autres vannes du départ nord lors de la prochaine visite préventive.",
+          "predicted": "Vérifier l'état des autres vannes du départ nord lors de la prochaine visite préventive.",
+          "outcome": "correct",
+          "token_f1": 1.0
+        }
+      }
+    },
+    {
+      "file": "RI-2026-1043_disjoncteur_mediatheque.pdf",
+      "layout": "narrative",
+      "method": "text",
+      "pdf_ms": 3.0,
+      "extraction_ms": 1.5,
+      "fields": {
+        "intervention_id": {
+          "expected": "RI-2026-1043",
+          "predicted": "RI-2026-1043",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "date": {
+          "expected": "2026-10-21",
+          "predicted": null,
+          "outcome": "missed",
+          "token_f1": null
+        },
+        "building": {
+          "expected": "BAT-C",
+          "predicted": "Bâtiment C",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "equipment_id": {
+          "expected": "TD-C01",
+          "predicted": "TD-C01",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "equipment_name": {
+          "expected": "Tableau divisionnaire",
+          "predicted": null,
+          "outcome": "missed",
+          "token_f1": 0.0
+        },
+        "equipment_category": {
+          "expected": "Électricité",
+          "predicted": null,
+          "outcome": "missed",
+          "token_f1": null
+        },
+        "technician": {
+          "expected": "Sophie Lambert",
+          "predicted": null,
+          "outcome": "missed",
+          "token_f1": 0.0
+        },
+        "problem_description": {
+          "expected": "Nouveau déclenchement du disjoncteur différentiel alimentant l'éclairage de la salle de lecture.",
+          "predicted": null,
+          "outcome": "missed",
+          "token_f1": 0.0
+        },
+        "actions_performed": {
+          "expected": "Mesures d'isolement sur l'ensemble des circuits du tableau, réarmement du disjoncteur et essai de fonctionnement de deux heures sans nouveau déclenchement.",
+          "predicted": null,
+          "outcome": "missed",
+          "token_f1": 0.0
+        },
+        "status": {
+          "expected": "terminee",
+          "predicted": null,
+          "outcome": "missed",
+          "token_f1": null
+        },
+        "follow_up_required": {
+          "expected": true,
+          "predicted": null,
+          "outcome": "missed",
+          "token_f1": null
+        },
+        "recommendations": {
+          "expected": "Contrôler l'absence de déclenchement pendant les deux prochaines semaines.",
+          "predicted": null,
+          "outcome": "missed",
+          "token_f1": 0.0
+        }
+      }
+    },
+    {
+      "file": "RI-2026-1044_temperature_salle_serveurs.pdf",
+      "layout": "structured",
+      "method": "text",
+      "pdf_ms": 4.2,
+      "extraction_ms": 2.3,
+      "fields": {
+        "intervention_id": {
+          "expected": "RI-2026-1044",
+          "predicted": "RI-2026-1044",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "date": {
+          "expected": "2026-10-27",
+          "predicted": "2026-10-27",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "building": {
+          "expected": "BAT-E",
+          "predicted": "Bâtiment E - Centre administratif du Parc",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "equipment_id": {
+          "expected": "CLIM-E01",
+          "predicted": "CLIM-E01",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "equipment_name": {
+          "expected": "Climatisation salle serveurs",
+          "predicted": "Climatisation salle serveurs",
+          "outcome": "correct",
+          "token_f1": 1.0
+        },
+        "equipment_category": {
+          "expected": "CVC",
+          "predicted": "CVC",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "technician": {
+          "expected": "Karim Benali",
+          "predicted": "Karim Benali",
+          "outcome": "correct",
+          "token_f1": 1.0
+        },
+        "problem_description": {
+          "expected": "Défaut de température dans la salle serveurs : 30 °C relevés en entrée de baie, alarme de supervision déclenchée.",
+          "predicted": "Défaut de température dans la salle serveurs : 30 °C relevés en entrée de baie, alarme de supervision déclenchée.",
+          "outcome": "correct",
+          "token_f1": 1.0
+        },
+        "actions_performed": {
+          "expected": "Contrôle de l'unité intérieure, nettoyage des filtres et contrôle des pressions : charge en fluide frigorigène insuffisante. Mise en place d'un climatiseur mobile d'appoint.",
+          "predicted": "Contrôle de l'unité intérieure, nettoyage des filtres et contrôle des pressions : charge en fluide frigorigène insuffisante. Mise en place d'un climatiseur mobile d'appoint.",
+          "outcome": "correct",
+          "token_f1": 1.0
+        },
+        "status": {
+          "expected": "en_cours",
+          "predicted": "en_cours",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "follow_up_required": {
+          "expected": true,
+          "predicted": true,
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "recommendations": {
+          "expected": "Faire intervenir un frigoriste certifié pour la recherche de fuite et la recharge du circuit.",
+          "predicted": "Faire intervenir un frigoriste certifié pour la recherche de fuite et la recharge du circuit.",
+          "outcome": "correct",
+          "token_f1": 1.0
+        }
+      }
+    },
+    {
+      "file": "RI-2026-1045_groupe_froid_message.pdf",
+      "layout": "narrative",
+      "method": "text",
+      "pdf_ms": 3.2,
+      "extraction_ms": 1.5,
+      "fields": {
+        "intervention_id": {
+          "expected": "RI-2026-1045",
+          "predicted": "RI-2026-1045",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "date": {
+          "expected": "2026-10-26",
+          "predicted": null,
+          "outcome": "missed",
+          "token_f1": null
+        },
+        "building": {
+          "expected": "BAT-A",
+          "predicted": "Bâtiment A",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "equipment_id": {
+          "expected": "GF-A01",
+          "predicted": "GF-A01",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "equipment_name": {
+          "expected": "Groupe froid de climatisation des bureaux",
+          "predicted": null,
+          "outcome": "missed",
+          "token_f1": 0.0
+        },
+        "equipment_category": {
+          "expected": "CVC",
+          "predicted": null,
+          "outcome": "missed",
+          "token_f1": null
+        },
+        "technician": {
+          "expected": "Élodie Martin",
+          "predicted": null,
+          "outcome": "missed",
+          "token_f1": 0.0
+        },
+        "problem_description": {
+          "expected": "Défaut basse pression sur le groupe froid de climatisation des bureaux.",
+          "predicted": null,
+          "outcome": "missed",
+          "token_f1": 0.0
+        },
+        "actions_performed": {
+          "expected": "Contrôle des pressions et recherche de fuite au détecteur électronique, remplacement de la vanne de service fuyarde, tirage au vide et recharge à la charge nominale.",
+          "predicted": null,
+          "outcome": "missed",
+          "token_f1": 0.0
+        },
+        "status": {
+          "expected": "terminee",
+          "predicted": null,
+          "outcome": "missed",
+          "token_f1": null
+        },
+        "follow_up_required": {
+          "expected": false,
+          "predicted": null,
+          "outcome": "missed",
+          "token_f1": null
+        },
+        "recommendations": {
+          "expected": null,
+          "predicted": null,
+          "outcome": "correct_null",
+          "token_f1": null
+        }
+      }
+    },
+    {
+      "file": "RI-2026-1046_ascenseur_scan.pdf",
+      "layout": "scanned",
+      "method": "ocr",
+      "pdf_ms": 2129.7,
+      "extraction_ms": 8.2,
+      "fields": {
+        "intervention_id": {
+          "expected": "RI-2026-1046",
+          "predicted": "RI-2026-1046",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "date": {
+          "expected": "2026-10-19",
+          "predicted": "2026-10-19",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "building": {
+          "expected": "BAT-A",
+          "predicted": "Bâtiment A - Immeuble de bureaux Horizon",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "equipment_id": {
+          "expected": "ASC-A01",
+          "predicted": "ASC-A01",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "equipment_name": {
+          "expected": "Ascenseur principal",
+          "predicted": "Ascenseur principal",
+          "outcome": "correct",
+          "token_f1": 1.0
+        },
+        "equipment_category": {
+          "expected": "Ascenseurs",
+          "predicted": "Ascenseurs",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "technician": {
+          "expected": null,
+          "predicted": null,
+          "outcome": "correct_null",
+          "token_f1": null
+        },
+        "problem_description": {
+          "expected": "Ascenseur principal à l'arrêt, défaut de fermeture de la porte cabine.",
+          "predicted": "Ascenseur principal à l'arrêt, défaut de fermeture de la porte cabine.",
+          "outcome": "correct",
+          "token_f1": 1.0
+        },
+        "actions_performed": {
+          "expected": "Remplacement de la cellule de détection de porte et essais de fonctionnement sur 20 cycles.",
+          "predicted": "Remplacement de la cellule de détection de porte et essais de fonctionnement sur 20 cycles.",
+          "outcome": "correct",
+          "token_f1": 1.0
+        },
+        "status": {
+          "expected": "terminee",
+          "predicted": "terminee",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "follow_up_required": {
+          "expected": false,
+          "predicted": false,
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "recommendations": {
+          "expected": null,
+          "predicted": null,
+          "outcome": "correct_null",
+          "token_f1": null
+        }
+      }
+    },
+    {
+      "file": "RI-2026-1047_CTA_soins_statut_absent.pdf",
+      "layout": "structured",
+      "method": "text",
+      "pdf_ms": 11.2,
+      "extraction_ms": 4.9,
+      "fields": {
+        "intervention_id": {
+          "expected": "RI-2026-1047",
+          "predicted": "RI-2026-1047",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "date": {
+          "expected": "2026-10-15",
+          "predicted": "2026-10-15",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "building": {
+          "expected": "BAT-B",
+          "predicted": "Bâtiment B - Centre de soins Les Tilleuls",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "equipment_id": {
+          "expected": "CTA-B01",
+          "predicted": "CTA-B01",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "equipment_name": {
+          "expected": "Centrale de traitement d'air - secteur soins",
+          "predicted": "Centrale de traitement d'air - secteur soins",
+          "outcome": "correct",
+          "token_f1": 1.0
+        },
+        "equipment_category": {
+          "expected": "CVC",
+          "predicted": "CVC",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "technician": {
+          "expected": "Élodie Martin",
+          "predicted": "Élodie Martin",
+          "outcome": "correct",
+          "token_f1": 1.0
+        },
+        "problem_description": {
+          "expected": "Bruit anormal et vibration au niveau du ventilateur de soufflage de la CTA du secteur soins.",
+          "predicted": "Bruit anormal et vibration au niveau du ventilateur de soufflage de la CTA du secteur soins.",
+          "outcome": "correct",
+          "token_f1": 1.0
+        },
+        "actions_performed": {
+          "expected": "Diagnostic réalisé : roulement du moteur de soufflage usé. Pièce commandée.",
+          "predicted": "Diagnostic réalisé : roulement du moteur de soufflage usé. Pièce commandée.",
+          "outcome": "correct",
+          "token_f1": 1.0
+        },
+        "status": {
+          "expected": null,
+          "predicted": null,
+          "outcome": "correct_null",
+          "token_f1": null
+        },
+        "follow_up_required": {
+          "expected": true,
+          "predicted": true,
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "recommendations": {
+          "expected": "Remplacer le roulement dès réception de la pièce et programmer l'intervention en dehors des horaires de soins.",
+          "predicted": "Remplacer le roulement dès réception de la pièce et programmer l'intervention en dehors des horaires de soins.",
+          "outcome": "correct",
+          "token_f1": 1.0
+        }
+      }
+    },
+    {
+      "file": "RI-2026-1048_chaudiere_ecole.pdf",
+      "layout": "structured",
+      "method": "text",
+      "pdf_ms": 10.8,
+      "extraction_ms": 5.2,
+      "fields": {
+        "intervention_id": {
+          "expected": "RI-2026-1048",
+          "predicted": "RI-2026-1048",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "date": {
+          "expected": "2026-10-12",
+          "predicted": "2026-10-12",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "building": {
+          "expected": "BAT-D",
+          "predicted": "Bâtiment D - Groupe scolaire des Érables",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "equipment_id": {
+          "expected": "CHA-D01",
+          "predicted": "CHA-D01",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "equipment_name": {
+          "expected": "Chaudière gaz - chaufferie",
+          "predicted": "Chaudière gaz - chaufferie",
+          "outcome": "correct",
+          "token_f1": 1.0
+        },
+        "equipment_category": {
+          "expected": "CVC",
+          "predicted": "CVC",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "technician": {
+          "expected": "Thomas Girard",
+          "predicted": "Thomas Girard",
+          "outcome": "correct",
+          "token_f1": 1.0
+        },
+        "problem_description": {
+          "expected": "Chaudière en sécurité (défaut flamme) au démarrage du chauffage, salles de classe froides.",
+          "predicted": "Chaudière en sécurité (défaut flamme) au démarrage du chauffage, salles de classe froides.",
+          "outcome": "correct",
+          "token_f1": 1.0
+        },
+        "actions_performed": {
+          "expected": "Remplacement de la sonde d'ionisation, contrôle de combustion et remise en service.",
+          "predicted": "Remplacement de la sonde d'ionisation, contrôle de combustion et remise en service.",
+          "outcome": "correct",
+          "token_f1": 1.0
+        },
+        "status": {
+          "expected": "terminee",
+          "predicted": "terminee",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "follow_up_required": {
+          "expected": false,
+          "predicted": false,
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "recommendations": {
+          "expected": "Prévoir le contrôle annuel de combustion avant fin novembre.",
+          "predicted": "Prévoir le contrôle annuel de combustion avant fin novembre.",
+          "outcome": "correct",
+          "token_f1": 1.0
+        }
+      }
+    },
+    {
+      "file": "RI-2026-1049_groupe_electrogene_rapport.pdf",
+      "layout": "narrative",
+      "method": "text",
+      "pdf_ms": 11.2,
+      "extraction_ms": 4.3,
+      "fields": {
+        "intervention_id": {
+          "expected": "RI-2026-1049",
+          "predicted": "RI-2026-1049",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "date": {
+          "expected": "2026-10-08",
+          "predicted": null,
+          "outcome": "missed",
+          "token_f1": null
+        },
+        "building": {
+          "expected": "BAT-B",
+          "predicted": "Bâtiment B",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "equipment_id": {
+          "expected": "GE-B01",
+          "predicted": "GE-B01",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "equipment_name": {
+          "expected": "Groupe électrogène de secours",
+          "predicted": null,
+          "outcome": "missed",
+          "token_f1": 0.0
+        },
+        "equipment_category": {
+          "expected": "Électricité",
+          "predicted": null,
+          "outcome": "missed",
+          "token_f1": null
+        },
+        "technician": {
+          "expected": "Sophie Lambert",
+          "predicted": null,
+          "outcome": "missed",
+          "token_f1": 0.0
+        },
+        "problem_description": {
+          "expected": "Démarrage du groupe électrogène de secours avec un retard d'environ 25 secondes lors de l'essai mensuel.",
+          "predicted": null,
+          "outcome": "missed",
+          "token_f1": 0.0
+        },
+        "actions_performed": {
+          "expected": "Contrôle du circuit de préchauffage, remplacement de la résistance de préchauffage défectueuse, nouvel essai de démarrage et essai en charge de 30 minutes conformes.",
+          "predicted": null,
+          "outcome": "missed",
+          "token_f1": 0.0
+        },
+        "status": {
+          "expected": "terminee",
+          "predicted": "terminee",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "follow_up_required": {
+          "expected": null,
+          "predicted": null,
+          "outcome": "correct_null",
+          "token_f1": null
+        },
+        "recommendations": {
+          "expected": "Vérifier le préchauffage lors de chaque essai mensuel pendant la période hivernale.",
+          "predicted": null,
+          "outcome": "missed",
+          "token_f1": 0.0
+        }
+      }
+    },
+    {
+      "file": "RI-2026-1050_surpresseur_fuite.pdf",
+      "layout": "structured",
+      "method": "text",
+      "pdf_ms": 10.3,
+      "extraction_ms": 4.7,
+      "fields": {
+        "intervention_id": {
+          "expected": "RI-2026-1050",
+          "predicted": "RI-2026-1050",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "date": {
+          "expected": "2026-10-28",
+          "predicted": "2026-10-28",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "building": {
+          "expected": "BAT-E",
+          "predicted": "Bâtiment E - Centre administratif du Parc",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "equipment_id": {
+          "expected": "SUR-E01",
+          "predicted": "SUR-E01",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "equipment_name": {
+          "expected": "Surpresseur d'eau",
+          "predicted": "Surpresseur d'eau",
+          "outcome": "correct",
+          "token_f1": 1.0
+        },
+        "equipment_category": {
+          "expected": "Plomberie",
+          "predicted": "Plomberie",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "technician": {
+          "expected": "Thomas Girard",
+          "predicted": "Thomas Girard",
+          "outcome": "correct",
+          "token_f1": 1.0
+        },
+        "problem_description": {
+          "expected": "Fuite sur le circuit hydraulique du surpresseur (suite de l'intervention RI-2026-1040).",
+          "predicted": "Fuite sur le circuit hydraulique du surpresseur (suite de l'intervention RI-2026-1040).",
+          "outcome": "correct",
+          "token_f1": 1.0
+        },
+        "actions_performed": {
+          "expected": "Remplacement de la garniture mécanique de la pompe n° 2, remise en service et contrôle d'étanchéité conforme.",
+          "predicted": "Remplacement de la garniture mécanique de la pompe n° 2, remise en service et contrôle d'étanchéité conforme.",
+          "outcome": "correct",
+          "token_f1": 1.0
+        },
+        "status": {
+          "expected": "terminee",
+          "predicted": "terminee",
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "follow_up_required": {
+          "expected": false,
+          "predicted": false,
+          "outcome": "correct",
+          "token_f1": null
+        },
+        "recommendations": {
+          "expected": null,
+          "predicted": null,
+          "outcome": "correct_null",
+          "token_f1": null
+        }
+      }
+    }
+  ]
+}

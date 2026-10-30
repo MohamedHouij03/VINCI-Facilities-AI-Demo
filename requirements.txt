@@ -1,0 +1,5 @@
+# Full local installation (backend + frontend + tests).
+# Docker images install only requirements/backend.txt or requirements/frontend.txt.
+-r requirements/backend.txt
+-r requirements/frontend.txt
+-r requirements/dev.txt

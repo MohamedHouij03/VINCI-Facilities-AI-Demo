@@ -1,0 +1,52 @@
+[
+  {
+    "file": "RI-2026-1041_CTA_vibrations.pdf",
+    "title": "RI-2026-1041 - Vibrations CTA (Bâtiment A) - formulaire",
+    "layout": "structured"
+  },
+  {
+    "file": "RI-2026-1042_fuite_circuit_chauffage.pdf",
+    "title": "RI-2026-1042 - Fuite circuit hydraulique (Bâtiment D) - formulaire",
+    "layout": "structured"
+  },
+  {
+    "file": "RI-2026-1043_disjoncteur_mediatheque.pdf",
+    "title": "RI-2026-1043 - Déclenchement disjoncteur (Bâtiment C) - compte rendu rédigé",
+    "layout": "narrative"
+  },
+  {
+    "file": "RI-2026-1044_temperature_salle_serveurs.pdf",
+    "title": "RI-2026-1044 - Température salle serveurs (Bâtiment E) - formulaire",
+    "layout": "structured"
+  },
+  {
+    "file": "RI-2026-1045_groupe_froid_message.pdf",
+    "title": "RI-2026-1045 - Groupe froid (Bâtiment A) - message du technicien",
+    "layout": "narrative"
+  },
+  {
+    "file": "RI-2026-1046_ascenseur_scan.pdf",
+    "title": "RI-2026-1046 - Ascenseur (Bâtiment A) - formulaire scanné (OCR)",
+    "layout": "scanned"
+  },
+  {
+    "file": "RI-2026-1047_CTA_soins_statut_absent.pdf",
+    "title": "RI-2026-1047 - CTA secteur soins (Bâtiment B) - formulaire incomplet",
+    "layout": "structured"
+  },
+  {
+    "file": "RI-2026-1048_chaudiere_ecole.pdf",
+    "title": "RI-2026-1048 - Chaudière (Bâtiment D) - formulaire",
+    "layout": "structured"
+  },
+  {
+    "file": "RI-2026-1049_groupe_electrogene_rapport.pdf",
+    "title": "RI-2026-1049 - Groupe électrogène (Bâtiment B) - rapport rédigé",
+    "layout": "narrative"
+  },
+  {
+    "file": "RI-2026-1050_surpresseur_fuite.pdf",
+    "title": "RI-2026-1050 - Surpresseur (Bâtiment E) - formulaire",
+    "layout": "structured"
+  }
+]

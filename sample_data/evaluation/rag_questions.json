@@ -1,0 +1,82 @@
+[
+  {
+    "question": "Que recommande le manuel technique concernant les vibrations anormales ?",
+    "document": "manuel_cta_ax400.pdf",
+    "evidence": "remplacer les roulements"
+  },
+  {
+    "question": "Quelles sont les causes possibles d'une vibration anormale sur une CTA ?",
+    "document": "manuel_cta_ax400.pdf",
+    "evidence": "desequilibre de la turbine"
+  },
+  {
+    "question": "À quelle fréquence faut-il remplacer les filtres de la centrale de traitement d'air ?",
+    "document": "manuel_cta_ax400.pdf",
+    "evidence": "tous les 6 mois"
+  },
+  {
+    "question": "Pourquoi une climatisation ne refroidit plus ?",
+    "document": "guide_groupes_froids_climatisation.pdf",
+    "evidence": "condenseur encrasse"
+  },
+  {
+    "question": "Qui est autorisé à manipuler les fluides frigorigènes ?",
+    "document": "guide_groupes_froids_climatisation.pdf",
+    "evidence": "attestation de capacite"
+  },
+  {
+    "question": "Que faire en cas de déclenchement haute pression du groupe froid ?",
+    "document": "guide_groupes_froids_climatisation.pdf",
+    "evidence": "pressostat hp"
+  },
+  {
+    "question": "Comment identifier la cause d'un déclenchement récurrent de disjoncteur ?",
+    "document": "guide_tableaux_electriques_bt.pdf",
+    "evidence": "sectionnement"
+  },
+  {
+    "question": "Quelle habilitation faut-il pour intervenir sur un tableau électrique ?",
+    "document": "guide_tableaux_electriques_bt.pdf",
+    "evidence": "habilitation electrique"
+  },
+  {
+    "question": "Comment rechercher une fuite sur un circuit de chauffage ?",
+    "document": "guide_reseaux_hydrauliques_chauffage.pdf",
+    "evidence": "par troncons"
+  },
+  {
+    "question": "Quelle est la pression de service habituelle d'un circuit de chauffage ?",
+    "document": "guide_reseaux_hydrauliques_chauffage.pdf",
+    "evidence": "entre 1 et 2 bar"
+  },
+  {
+    "question": "Quelle est la température maximale recommandée dans une salle serveurs ?",
+    "document": "procedure_salles_techniques_serveurs.pdf",
+    "evidence": "18 a 27"
+  },
+  {
+    "question": "Que faire si la température de la salle serveurs dépasse le seuil d'alarme ?",
+    "document": "procedure_salles_techniques_serveurs.pdf",
+    "evidence": "climatiseur mobile"
+  },
+  {
+    "question": "Quel est le prix d'un ascenseur neuf ?",
+    "document": null,
+    "evidence": null
+  },
+  {
+    "question": "Quelle est la procédure de nettoyage des panneaux photovoltaïques ?",
+    "document": null,
+    "evidence": null
+  },
+  {
+    "question": "Combien coûte un contrat de maintenance annuel ?",
+    "document": null,
+    "evidence": null
+  },
+  {
+    "question": "Comment entretenir une toiture végétalisée ?",
+    "document": null,
+    "evidence": null
+  }
+]

@@ -1,0 +1,19 @@
+code,name,category,building_code,location
+CTA-A01,Centrale de traitement d'air (CTA) - toiture,CVC,BAT-A,Toiture terrasse
+GF-A01,Groupe froid - climatisation des bureaux,CVC,BAT-A,Local technique R-1
+TGBT-A01,Tableau général basse tension,Électricité,BAT-A,Local TGBT R-1
+ASC-A01,Ascenseur principal,Ascenseurs,BAT-A,Hall d'accueil
+CTA-B01,Centrale de traitement d'air - secteur soins,CVC,BAT-B,Local CTA niveau 2
+CHA-B01,Chaudière gaz à condensation,CVC,BAT-B,Chaufferie
+GE-B01,Groupe électrogène de secours,Électricité,BAT-B,Local groupe électrogène
+SSI-B01,Système de sécurité incendie (centrale SSI),Sécurité incendie,BAT-B,Poste de sécurité
+PAC-C01,Pompe à chaleur air/eau,CVC,BAT-C,Terrasse technique
+TD-C01,Tableau divisionnaire - salle de lecture,Électricité,BAT-C,Salle de lecture
+DES-C01,Désenfumage de l'atrium,Sécurité incendie,BAT-C,Atrium
+CHA-D01,Chaudière gaz - chaufferie,CVC,BAT-D,Chaufferie
+HYD-D01,Réseau hydraulique de chauffage,Plomberie,BAT-D,Chaufferie et vide sanitaire
+ECS-D01,Production d'eau chaude sanitaire,Plomberie,BAT-D,Chaufferie
+CLIM-E01,Climatisation salle serveurs,CVC,BAT-E,Salle serveurs R+1
+VMC-E01,Ventilation mécanique contrôlée,CVC,BAT-E,Combles techniques
+ASC-E01,Ascenseur,Ascenseurs,BAT-E,Cage d'ascenseur
+SUR-E01,Surpresseur d'eau,Plomberie,BAT-E,Local surpresseur sous-sol

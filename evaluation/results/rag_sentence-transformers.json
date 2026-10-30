@@ -1,0 +1,284 @@
+{
+  "embedding_backend": "sentence-transformers",
+  "embedding_model": "intfloat/multilingual-e5-small",
+  "evaluated_at": "2026-10-29T14:30:19+00:00",
+  "questions": {
+    "answerable": 12,
+    "unsupported": 4
+  },
+  "recall_at_k": {
+    "@1": 0.6667,
+    "@3": 0.9167,
+    "@5": 1.0
+  },
+  "document_recall_at_k": {
+    "@1": 1.0,
+    "@3": 1.0,
+    "@5": 1.0
+  },
+  "mrr": 0.8125,
+  "citation_correct_top_source": 1.0,
+  "extractive_answer_contains_evidence": 0.9167,
+  "score_distribution": {
+    "answerable_top1_min": 0.8443,
+    "answerable_top1_mean": 0.8802,
+    "unsupported_top1_max": 0.837,
+    "unsupported_top1_mean": 0.8194
+  },
+  "rejection_by_threshold": [
+    {
+      "threshold": 0.8,
+      "answerable_accepted": "12/12",
+      "unsupported_rejected": "0/4",
+      "accuracy": 0.75
+    },
+    {
+      "threshold": 0.82,
+      "answerable_accepted": "12/12",
+      "unsupported_rejected": "2/4",
+      "accuracy": 0.875
+    },
+    {
+      "threshold": 0.83,
+      "answerable_accepted": "12/12",
+      "unsupported_rejected": "3/4",
+      "accuracy": 0.9375
+    },
+    {
+      "threshold": 0.84,
+      "answerable_accepted": "12/12",
+      "unsupported_rejected": "4/4",
+      "accuracy": 1.0
+    },
+    {
+      "threshold": 0.85,
+      "answerable_accepted": "11/12",
+      "unsupported_rejected": "4/4",
+      "accuracy": 0.9375
+    },
+    {
+      "threshold": 0.86,
+      "answerable_accepted": "11/12",
+      "unsupported_rejected": "4/4",
+      "accuracy": 0.9375
+    }
+  ],
+  "configured_threshold": {
+    "threshold": 0.84,
+    "answerable_accepted": "12/12",
+    "unsupported_rejected": "4/4",
+    "accuracy": 1.0
+  },
+  "indexing_seconds": 10.14,
+  "search_latency_ms_mean": 105.1,
+  "details": [
+    {
+      "question": "Que recommande le manuel technique concernant les vibrations anormales ?",
+      "answerable": true,
+      "expected_document": "manuel_cta_ax400.pdf",
+      "relevant_rank": 2,
+      "document_rank": 1,
+      "top1_score": 0.8786,
+      "top1_document": "manuel_cta_ax400.pdf",
+      "top1_page": 2,
+      "context_passages": 4,
+      "cited_document": "manuel_cta_ax400.pdf",
+      "cited_evidence": true
+    },
+    {
+      "question": "Quelles sont les causes possibles d'une vibration anormale sur une CTA ?",
+      "answerable": true,
+      "expected_document": "manuel_cta_ax400.pdf",
+      "relevant_rank": 1,
+      "document_rank": 1,
+      "top1_score": 0.8839,
+      "top1_document": "manuel_cta_ax400.pdf",
+      "top1_page": 2,
+      "context_passages": 5,
+      "cited_document": "manuel_cta_ax400.pdf",
+      "cited_evidence": true
+    },
+    {
+      "question": "À quelle fréquence faut-il remplacer les filtres de la centrale de traitement d'air ?",
+      "answerable": true,
+      "expected_document": "manuel_cta_ax400.pdf",
+      "relevant_rank": 2,
+      "document_rank": 1,
+      "top1_score": 0.8443,
+      "top1_document": "manuel_cta_ax400.pdf",
+      "top1_page": 2,
+      "context_passages": 5,
+      "cited_document": "manuel_cta_ax400.pdf",
+      "cited_evidence": true
+    },
+    {
+      "question": "Pourquoi une climatisation ne refroidit plus ?",
+      "answerable": true,
+      "expected_document": "guide_groupes_froids_climatisation.pdf",
+      "relevant_rank": 1,
+      "document_rank": 1,
+      "top1_score": 0.9163,
+      "top1_document": "guide_groupes_froids_climatisation.pdf",
+      "top1_page": 1,
+      "context_passages": 2,
+      "cited_document": "guide_groupes_froids_climatisation.pdf",
+      "cited_evidence": true
+    },
+    {
+      "question": "Qui est autorisé à manipuler les fluides frigorigènes ?",
+      "answerable": true,
+      "expected_document": "guide_groupes_froids_climatisation.pdf",
+      "relevant_rank": 1,
+      "document_rank": 1,
+      "top1_score": 0.8715,
+      "top1_document": "guide_groupes_froids_climatisation.pdf",
+      "top1_page": 1,
+      "context_passages": 1,
+      "cited_document": "guide_groupes_froids_climatisation.pdf",
+      "cited_evidence": true
+    },
+    {
+      "question": "Que faire en cas de déclenchement haute pression du groupe froid ?",
+      "answerable": true,
+      "expected_document": "guide_groupes_froids_climatisation.pdf",
+      "relevant_rank": 1,
+      "document_rank": 1,
+      "top1_score": 0.8822,
+      "top1_document": "guide_groupes_froids_climatisation.pdf",
+      "top1_page": 2,
+      "context_passages": 5,
+      "cited_document": "guide_groupes_froids_climatisation.pdf",
+      "cited_evidence": true
+    },
+    {
+      "question": "Comment identifier la cause d'un déclenchement récurrent de disjoncteur ?",
+      "answerable": true,
+      "expected_document": "guide_tableaux_electriques_bt.pdf",
+      "relevant_rank": 4,
+      "document_rank": 1,
+      "top1_score": 0.8797,
+      "top1_document": "guide_tableaux_electriques_bt.pdf",
+      "top1_page": 1,
+      "context_passages": 5,
+      "cited_document": "guide_tableaux_electriques_bt.pdf",
+      "cited_evidence": false
+    },
+    {
+      "question": "Quelle habilitation faut-il pour intervenir sur un tableau électrique ?",
+      "answerable": true,
+      "expected_document": "guide_tableaux_electriques_bt.pdf",
+      "relevant_rank": 1,
+      "document_rank": 1,
+      "top1_score": 0.8831,
+      "top1_document": "guide_tableaux_electriques_bt.pdf",
+      "top1_page": 1,
+      "context_passages": 3,
+      "cited_document": "guide_tableaux_electriques_bt.pdf",
+      "cited_evidence": true
+    },
+    {
+      "question": "Comment rechercher une fuite sur un circuit de chauffage ?",
+      "answerable": true,
+      "expected_document": "guide_reseaux_hydrauliques_chauffage.pdf",
+      "relevant_rank": 1,
+      "document_rank": 1,
+      "top1_score": 0.8874,
+      "top1_document": "guide_reseaux_hydrauliques_chauffage.pdf",
+      "top1_page": 1,
+      "context_passages": 5,
+      "cited_document": "guide_reseaux_hydrauliques_chauffage.pdf",
+      "cited_evidence": true
+    },
+    {
+      "question": "Quelle est la pression de service habituelle d'un circuit de chauffage ?",
+      "answerable": true,
+      "expected_document": "guide_reseaux_hydrauliques_chauffage.pdf",
+      "relevant_rank": 1,
+      "document_rank": 1,
+      "top1_score": 0.8722,
+      "top1_document": "guide_reseaux_hydrauliques_chauffage.pdf",
+      "top1_page": 1,
+      "context_passages": 5,
+      "cited_document": "guide_reseaux_hydrauliques_chauffage.pdf",
+      "cited_evidence": true
+    },
+    {
+      "question": "Quelle est la température maximale recommandée dans une salle serveurs ?",
+      "answerable": true,
+      "expected_document": "procedure_salles_techniques_serveurs.pdf",
+      "relevant_rank": 2,
+      "document_rank": 1,
+      "top1_score": 0.8839,
+      "top1_document": "procedure_salles_techniques_serveurs.pdf",
+      "top1_page": 2,
+      "context_passages": 5,
+      "cited_document": "procedure_salles_techniques_serveurs.pdf",
+      "cited_evidence": true
+    },
+    {
+      "question": "Que faire si la température de la salle serveurs dépasse le seuil d'alarme ?",
+      "answerable": true,
+      "expected_document": "procedure_salles_techniques_serveurs.pdf",
+      "relevant_rank": 1,
+      "document_rank": 1,
+      "top1_score": 0.8789,
+      "top1_document": "procedure_salles_techniques_serveurs.pdf",
+      "top1_page": 1,
+      "context_passages": 5,
+      "cited_document": "procedure_salles_techniques_serveurs.pdf",
+      "cited_evidence": true
+    },
+    {
+      "question": "Quel est le prix d'un ascenseur neuf ?",
+      "answerable": false,
+      "expected_document": null,
+      "relevant_rank": null,
+      "document_rank": null,
+      "top1_score": 0.8001,
+      "top1_document": "guide_tableaux_electriques_bt.pdf",
+      "top1_page": 1,
+      "context_passages": 0,
+      "cited_document": null,
+      "cited_evidence": false
+    },
+    {
+      "question": "Quelle est la procédure de nettoyage des panneaux photovoltaïques ?",
+      "answerable": false,
+      "expected_document": null,
+      "relevant_rank": null,
+      "document_rank": null,
+      "top1_score": 0.8155,
+      "top1_document": "guide_tableaux_electriques_bt.pdf",
+      "top1_page": 1,
+      "context_passages": 0,
+      "cited_document": null,
+      "cited_evidence": false
+    },
+    {
+      "question": "Combien coûte un contrat de maintenance annuel ?",
+      "answerable": false,
+      "expected_document": null,
+      "relevant_rank": null,
+      "document_rank": null,
+      "top1_score": 0.837,
+      "top1_document": "manuel_cta_ax400.pdf",
+      "top1_page": 1,
+      "context_passages": 0,
+      "cited_document": null,
+      "cited_evidence": false
+    },
+    {
+      "question": "Comment entretenir une toiture végétalisée ?",
+      "answerable": false,
+      "expected_document": null,
+      "relevant_rank": null,
+      "document_rank": null,
+      "top1_score": 0.8251,
+      "top1_document": "guide_reseaux_hydrauliques_chauffage.pdf",
+      "top1_page": 1,
+      "context_passages": 0,
+      "cited_document": null,
+      "cited_evidence": false
+    }
+  ]
+}

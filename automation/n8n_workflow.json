@@ -1,0 +1,275 @@
+{
+  "name": "VINCI Facilities AI Demo - Automatisation maintenance",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Traitement des rapports\nDéclenché par FastAPI à chaque rapport téléversé (header X-Webhook-Secret).\nn8n rappelle l'API pour lancer l'analyse (3 tentatives). Le traitement est idempotent côté API.\nEn cas d'échec définitif, l'échec est signalé à l'API.",
+        "height": 220,
+        "width": 900,
+        "color": 7
+      },
+      "id": "6f0b2a52-6a3e-4c1f-9b5e-0a1f3b9e7c01",
+      "name": "Note - Traitement",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [-60, -120]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "vinci-report-processing",
+        "authentication": "headerAuth",
+        "responseMode": "onReceived",
+        "options": {}
+      },
+      "id": "0f9a8c3e-1b62-4b8e-8c9c-3d3c2e1a0a11",
+      "name": "Webhook - Rapport téléversé",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [0, 0],
+      "webhookId": "4b6f1d2a-7e5c-4a8b-9f0e-2c3d4e5f6a11"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $json.body.process_url }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {
+          "timeout": 180000
+        }
+      },
+      "id": "1a2b3c4d-5e6f-4a1b-8c2d-3e4f5a6b7c12",
+      "name": "Lancer le traitement (FastAPI)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [260, 0],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {},
+      "id": "2b3c4d5e-6f7a-4b2c-9d3e-4f5a6b7c8d13",
+      "name": "Brouillon prêt pour vérification",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [560, -80]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $('Webhook - Rapport téléversé').item.json.body.failure_url }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ error: ($json.error && $json.error.message) ? String($json.error.message).slice(0, 1900) : 'Échec du traitement après plusieurs tentatives' }) }}",
+        "options": {}
+      },
+      "id": "3c4d5e6f-7a8b-4c3d-8e4f-5a6b7c8d9e14",
+      "name": "Signaler l'échec (FastAPI)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [560, 100],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000
+    },
+    {
+      "parameters": {
+        "content": "## Notification de suivi\nDéclenché par FastAPI uniquement après validation humaine d'une intervention nécessitant un suivi.\n1. Réservation atomique de l'envoi (claim) : un webhook rejoué ne peut pas envoyer deux e-mails.\n2. Envoi SMTP. 3. Accusé de réception (sent / failed) vers l'API.",
+        "height": 240,
+        "width": 1180,
+        "color": 7
+      },
+      "id": "7a0c3b63-7b4f-4d20-8c6f-1b2a4c0f8d02",
+      "name": "Note - Suivi",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [-60, 240]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "vinci-follow-up",
+        "authentication": "headerAuth",
+        "responseMode": "onReceived",
+        "options": {}
+      },
+      "id": "4d5e6f7a-8b9c-4d4e-9f5a-6b7c8d9e0f15",
+      "name": "Webhook - Suivi requis",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [0, 380],
+      "webhookId": "8c9d0e1f-2a3b-4c5d-8e6f-7a8b9c0d1e25"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $json.body.claim_url }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "id": "5e6f7a8b-9c0d-4e5f-8a6b-7c8d9e0f1a16",
+      "name": "Réserver l'envoi (claim)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [260, 380],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 3000,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "b1c2d3e4-f5a6-4b7c-8d9e-0f1a2b3c4d26",
+              "leftValue": "={{ $json.should_send }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "6f7a8b9c-0d1e-4f6a-9b7c-8d9e0f1a2b17",
+      "name": "Envoi autorisé ?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [520, 360]
+    },
+    {
+      "parameters": {
+        "fromEmail": "maintenance-demo@example.com",
+        "toEmail": "={{ $json.recipient }}",
+        "subject": "={{ $json.subject }}",
+        "emailFormat": "text",
+        "text": "={{ $json.body }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "id": "7a8b9c0d-1e2f-4a7b-8c8d-9e0f1a2b3c18",
+      "name": "Envoyer l'e-mail",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [780, 300],
+      "retryOnFail": true,
+      "maxTries": 2,
+      "waitBetweenTries": 5000,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $('Webhook - Suivi requis').item.json.body.ack_url }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"status\": \"sent\"}",
+        "options": {}
+      },
+      "id": "8b9c0d1e-2f3a-4b8c-9d9e-0f1a2b3c4d19",
+      "name": "Confirmer l'envoi (ack)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1040, 240],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 3000
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $('Webhook - Suivi requis').item.json.body.ack_url }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ status: 'failed', error: ($json.error && $json.error.message) ? String($json.error.message).slice(0, 1900) : 'Échec SMTP' }) }}",
+        "options": {}
+      },
+      "id": "9c0d1e2f-3a4b-4c9d-8e0f-1a2b3c4d5e20",
+      "name": "Signaler l'échec d'envoi (ack)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1040, 400],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 3000
+    },
+    {
+      "parameters": {},
+      "id": "0d1e2f3a-4b5c-4d0e-9f1a-2b3c4d5e6f21",
+      "name": "Doublon ignoré",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [780, 480]
+    },
+    {
+      "parameters": {},
+      "id": "1e2f3a4b-5c6d-4e1f-8a2b-3c4d5e6f7a22",
+      "name": "Réservation impossible",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [520, 520]
+    }
+  ],
+  "connections": {
+    "Webhook - Rapport téléversé": {
+      "main": [[{ "node": "Lancer le traitement (FastAPI)", "type": "main", "index": 0 }]]
+    },
+    "Lancer le traitement (FastAPI)": {
+      "main": [
+        [{ "node": "Brouillon prêt pour vérification", "type": "main", "index": 0 }],
+        [{ "node": "Signaler l'échec (FastAPI)", "type": "main", "index": 0 }]
+      ]
+    },
+    "Webhook - Suivi requis": {
+      "main": [[{ "node": "Réserver l'envoi (claim)", "type": "main", "index": 0 }]]
+    },
+    "Réserver l'envoi (claim)": {
+      "main": [
+        [{ "node": "Envoi autorisé ?", "type": "main", "index": 0 }],
+        [{ "node": "Réservation impossible", "type": "main", "index": 0 }]
+      ]
+    },
+    "Envoi autorisé ?": {
+      "main": [
+        [{ "node": "Envoyer l'e-mail", "type": "main", "index": 0 }],
+        [{ "node": "Doublon ignoré", "type": "main", "index": 0 }]
+      ]
+    },
+    "Envoyer l'e-mail": {
+      "main": [
+        [{ "node": "Confirmer l'envoi (ack)", "type": "main", "index": 0 }],
+        [{ "node": "Signaler l'échec d'envoi (ack)", "type": "main", "index": 0 }]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "tags": []
+}
