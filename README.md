@@ -3,8 +3,18 @@
 Assistant intelligent de maintenance des bâtiments : analyse automatique des rapports d'intervention,
 tableau de bord, assistant documentaire et automatisation des suivis.
 
-> Prototype indépendant réalisé dans le cadre de ma candidature au stage Ingénieur IA & Data chez
+> **Prototype indépendant** réalisé dans le cadre de ma candidature au stage Ingénieur IA & Data chez
 > VINCI Facilities. Projet non affilié ni approuvé par VINCI Facilities. Toutes les données sont fictives.
+
+## ▶️ Vidéo de démonstration
+
+**Découvrez le prototype en fonctionnement :** cliquez sur le bouton ci-dessous ou sur la miniature pour regarder la vidéo sur YouTube.
+
+[![Regarder la vidéo de démonstration sur YouTube](https://img.shields.io/badge/YouTube-REGARDER_LA_D%C3%89MO-red?logo=youtube&logoColor=white)](https://www.youtube.com/watch?v=z9i72f1Dvo4)
+
+[![▶️ Cliquez ici pour regarder la vidéo de démonstration du prototype VINCI Facilities AI Demo](https://img.youtube.com/vi/z9i72f1Dvo4/maxresdefault.jpg)](https://www.youtube.com/watch?v=z9i72f1Dvo4)
+
+*▶️ Cliquez sur l'image pour lancer la démonstration sur YouTube.*
 
 ## Pourquoi ce projet
 
@@ -123,8 +133,3 @@ tests/        tests pytest
 Prototype de démonstration : données fictives, pas de gestion d'utilisateurs, SQLite mono-instance.
 Les suggestions de l'IA restent une aide à la décision : toute intervention technique relève d'un
 personnel qualifié.
-
----
-
-**Demo Video** 
-[![Demo Video](https://img.youtube.com/vi/z9i72f1Dvo4/maxresdefault.jpg)](https://www.youtube.com/watch?v=z9i72f1Dvo4)
